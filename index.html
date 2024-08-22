@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=EB+Garamond&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll for Perception</title>
+    
+    <!-- Embedded CSS -->
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Georgia', serif; /* Give it a more fantasy-like feel */
+            background: url('https://cdn.pixabay.com/photo/2012/12/06/06/29/paper-68833_1280.jpg') no-repeat center center fixed;
+	    background-size: cover;
+            color: #333;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #dice-container {
+            text-align: center;
+            color: #f9f9f9;
+        }
+
+        #documentContent {
+            display: none; /* Initially hidden */
+            padding: 20px;
+            background-color: #f9f9f9;
+            background: url('https://cdn.pixabay.com/photo/2012/12/06/06/29/paper-68833_1280.jpg') no-repeat center center fixed;
+	    background-size: cover;
+            color: #1a1a1a;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        #dice {
+            font-size: 50px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #660000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px #333;
+        }
+
+        button:hover {
+            background-color: #990000;
+        }
+
+        h1, p {
+            margin: 20px 0;
+        }
+
+        .flavor-text {
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .result-text {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay">
+        <div id="dice-container">
+            <p class="flavor-text">You find yourself before a sealed parchment. Only those with keen senses may reveal its contents. Will you <strong>Roll for Perception</strong>?</p>
+            <button id="rollButton">Roll for Perception</button>
+            <div id="dice"></div>
+            <p id="resultText" class="result-text"></p>
+        </div>
+    </div>
+
+    <div id="documentContent">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="DON_FRUMAN_Resume_4%20Fonts_files/filelist.xml">
+<link rel=Edit-Time-Data href="DON_FRUMAN_Resume_4%20Fonts_files/editdata.mso">
+<title>DON FRUMAN</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>William</o:Author>
+  <o:LastAuthor>Don Fruman</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>10</o:TotalTime>
+  <o:Created>2024-08-22T19:41:00Z</o:Created>
+  <o:LastSaved>2024-08-22T19:41:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>554</o:Words>
+  <o:Characters>3161</o:Characters>
+  <o:Lines>26</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>3708</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:HRJ_IDENTIFIER dt:dt="string">54ce6388-cad9-4a38-a1c1-8f093c54bb84</o:HRJ_IDENTIFIER>
+  <o:x1ye_x003d_0 dt:dt="string">+E8AAB+LCAAAAAAABAAcmzeCo0AURA9EgBE2xHuER5DhvfecfplNJpMQ3b+r3hshloBInsZwDhJ4iERgnEZRiiEEBuMJnGaIQPkwQpMu0HyVOx7BTmsQlUmvWBSgeayH4jZM2f2ZPHvfqCf1dVhIZ31BSir6hHHqy+AO+Hs8XDRVR05fufmm0lDr7P24RYfCDqpRSwYCZkYurcQ3xUu0K/UlqcXYXvVjHLEgJrFy37Tr2MdaKBEhoIIDbJuloJ+</o:x1ye_x003d_0>
+  <o:x1ye_x003d_1 dt:dt="string">B3gxHbks/MmAQzmTJLT8bTX6Z4KceoouDVfewbOmqvRxR9FlNHTHFLe1paBwTzMeLr2VU0MOh0vMbX6Ok8A9jiiZSBAu108zj42PhGd8PpUWmwwbA5yaJiuJ8gjezW9mbO1kLfaOlDh9bYDVHs/G1fU6nujEOoWM/oZc25Iirv56H9J4vERwidFY0B3ItUFivbrFRanl0EwFU2ihYtafHm+UwJZITDVO44OHMlnpulm4WTiLkH4eL/aVfQ+VoGu</o:x1ye_x003d_1>
+  <o:x1ye_x003d_10 dt:dt="string">tTRaULSL6onUF+1XJgyjCyN81ty6cQue0xtbczChSbYqrrQXPLpYQ4th2RsjfUFIN71xnWoUK41Md1fmwJkT5AlkSuz9T1PFvWcgo/oAiivdcRrZ/F27CKVsEjxR/NgSiMmKC1ge6p//obKRnkPJtWGnfZd53ybjMKks63Vo+c38jjJF8fx0GmID6Z+fXG8O404mkp15lgn9/bDMHHCgHh+wUzq7LPy7Ak4vEa3th4wQhBU5SzxlykTzjsaEPVp</o:x1ye_x003d_10>
+  <o:x1ye_x003d_11 dt:dt="string">x26rYB/vsv++2XLzXSu4/ZvS/xif0VV/kwYIDBMgG4/najpo4ivfhACjEECcG/ytprCrqyi20AA+CBzZB0WExII7wL1sLxq5zO47BcR7HEL4R1wHdh9QhPs9MV3JWSL8GiokBtIeZpbf+enFKK6twlS4SUOodFuKRcT5ZVorgIQEX4p6Zb2FfglqO6UoCa68KKb3oM6dU+iOAsNrhGiAfn3AXvVKsGnC+wWxoQ+gf6CL6Z63RcSw58fj+yWkJSu</o:x1ye_x003d_11>
+  <o:x1ye_x003d_12 dt:dt="string">hBvHU4Uyj+sCONFx/s67b2isZxutUYcaplQX1Qe7qZuR+pyhTU61Wtgfmy4mWRl1Cc+PWIbpzeYg8QGapm8dLL6LT4R/UAdNMSSrX6AYEQontI82Jq5hnLksSG0gqUrWNROoL7/vEnZo8bs1N1pXBRPUUN2ioIHBZD7zIQsKkEjLC1BBIMnRUw8yWpX2DUu5MitDxoqfbaZourVDaZiwSFIi0D4SWsiPPD0jMNVZikfcLIUT116ApVjjlOFRoaq</o:x1ye_x003d_12>
+  <o:x1ye_x003d_13 dt:dt="string">vKU9Ol/LY6wkp5irYaPMbX2jAwRk+6nNb+6RFXoARTX3zlZHmfXk8+QYSugyyeXpDl+n9usYiaGAQHOiIjPz7fJEWXov4mJXqscHj1iDQApCjiCsro9KCfF9QAn0ce1XiZC9sg1pn1Oo5+ivOe0VyBhAy6sIKHmur2I5jkMznU8PsefMsQ7JOFZ6/RMkmwxxyidQmODHzWWsz0ng7LlSsEdHnC0adVRb2mVqujzMrU6eSL2n45tH4e344s0uhmK</o:x1ye_x003d_13>
+  <o:x1ye_x003d_14 dt:dt="string">o/h/0zhgcN5Xx7YCLATZ1SgRxXFFKAP+rHa18LU/qFSInN/k6w8w1U06aH07bFBEOm93h9W1K1SoP9HaZ+3LLX+Z1UfLMJDvAaY5qY0WZF+SyEEUxz1GtOQWuHZtywrde8aP7wQyExqLZLZoIHxyza0F5AjcqYyWixXy8Huw+xZKLr/jDm96oYPohMVCYBcCHRbS/4WJxvJEOC5N6RKkbRsvtrhgw+SbRKmw7lTrNBkPDrPUhpUk/zYRbqu4UIl</o:x1ye_x003d_14>
+  <o:x1ye_x003d_15 dt:dt="string">YiZYE+rdPCriOkdMLnhrsXsV4S89EfSPzb+tM1QBy6v710pgXohlAlrOhanDMhU1UOfXItv8JtpQGZL0/B5CeckOESB+gS94ZEHew2XE0w4xQtb1PaUrexVkWbDTF35klk8ojEuQY0twwX+2pQhfmGzt1b4cj0XLFi5vUWYUZpwKiRllzqtO950N1uJxG6jHn6SyPgfQgnOL+AtULdE/jE3MmgA4XNBXy107hRzgl0FWS+rmi/gTIeOlWxQnA2x</o:x1ye_x003d_15>
+  <o:x1ye_x003d_16 dt:dt="string">7PMSIeMdH7hKz2i4mvybX3wwRbeQY2pUFk7iu0KEPVRn5vJY+3yB0KkjLskFLQRmSRAp8YVGfJbiI6qPPUPMmiuwQA2fD867J1qxxAFbHsLnJhQfyxKqqyKp3N3ORkdPCTOBZkrDACbPftiC9G4h0U1OV55qd2sVRCyNaaGgwl6PZGjK35rnX47AlpZnF0oiezYV7Dw0nlrXqb7aUAQdfoMokm8DdD1mMASmM2Q1ieSWZhQwfn6iVKc2EM2Zepr</o:x1ye_x003d_16>
+  <o:x1ye_x003d_17 dt:dt="string">CqZv1OSOalM/8MG4HjzyF50GXo+RI1mZ3TVi+8B3FyIft57GX4yB8qE7CoKNEl1l5UtFDwkm0uyi/k/fRRyOOpzJzyJuGL2qlWnZ/HLnOLAFiiimaES9/S9lT9omHveSze6c0qRn8Jl1TCtrTBPhlBD/V2CnrQSxKvbXF9akP6YdlmaVvwor4JWWV3Q9LiERuFYRt3dVzhtnosrQcMmcNVVHYm0l1o+M4up6jhjw8Q/0yz3leE3DzG9r9TdYTS3</o:x1ye_x003d_17>
+  <o:x1ye_x003d_18 dt:dt="string">cxHzGyn1nQP03zaH69S9Up8FVgoCgoRqwjneXWp1NwRmVU8LYYTYZWVXbg10r+ADRoglAadCyAte4EwPvqVTp9C1e2ToolSUvWpf0EtcJVWJ3pkPjDLSDFhjep8d/SxL7jdvNM+M2/MzEGY2270NbAV8owCOqJGTV1HfbzRc7CGnhafUNFzc0zAXCGnrI8Wf4uzuwZOl1K2xHSI15kfj/joOddc1SsgRSccu7sQvoXZJUK6Hb5M0f4A7b0/sNms</o:x1ye_x003d_18>
+  <o:x1ye_x003d_19 dt:dt="string">HT1K6+wtPDayc54TxfkJ0Z1ON6eoUpL9T0/EG6uUAgi1n6F7jG1+iJqypN0LAHHu0prRYTBR6Hn8dckZi28n7GwMaP+IQ1E6Viuu8BsNG2+rtZEEPaNIe5MWAzSuCEOFe23jHPxECfZfbHIM/mrHwILSqBxKiK9wJ6WO8+oekEQ/J5AVOM6wV10Ipa4USxllDxamSl+kJRnBLWzzJaapea3lsG6COBhQY3sCp6gV1vXcVYZoU1n63kBV8JL82WE</o:x1ye_x003d_19>
+  <o:x1ye_x003d_2 dt:dt="string">5OqjbQYLPqZgfIxVRAksBXtZmpFkjnGZTSBCOGoozBv5FYdi7r1e7RZIMmmPRPV8UnvflOtn4Gg5CKRijN71xT7IfIFIaan2CS1UNiuG3TdP6X0hrTyddNnRhfEQqFXsiJFBPt6HBhVXmVXfUjOq3JQVdAbJQklCWFgRm2T9CGxeJVpxSQRBVP7Qs8Gdrty6NJrauVo94oQLLTZzsCuYjRPI9GeecXfRf50T2O1Rs+nzQAFZuQ5zVMuHmTLXvrN</o:x1ye_x003d_2>
+  <o:x1ye_x003d_20 dt:dt="string">r0yEr4e8M0zPSeZWprNIUpbKU/1xke+kis6STBl7zb3yoXP/2EqsW/KYwVKbIXSqUdAL8xPmGk/xaQkzrMitX2vpUUKFuSV6+t5Ukb2A50AtJwU+RiTz5XfQbO/8Y5ZOV8QiLJc37raOvNjBDpTsNJrRXtVZxYzNx4q6TveCffiiJJkhN3OSB4BZ47e5zGgEW38ppl8f52SE7FSX0Hw58VDP1xvD5DX7EpGK6BKajjNIF0ZXHWsUHYPCtFHBHYd</o:x1ye_x003d_20>
+  <o:x1ye_x003d_21 dt:dt="string">GwtQ3w0ChItRckYhCWoRKshFNPgDoY374Q4dnLSHrVpubB/CZ5noEwjYnxBy2MZnqjIFM+0dQ/qznUf29iKJUyunciiDRqE8qm2RmlB1cQVN1f3PJGQfdxdtMfllJ2NYqkzZ3AjMOeuhLGN/Wr4bzFStAjK8iavlAz7L7I0IOwOTlBCAKJ5sWamv172KrwuD6m5kBEC4c6A7BqX3aSn0cjfcNCGnvNbg++5lquSeM4IVRIJgfBqYJpSumrlcqgm</o:x1ye_x003d_21>
+  <o:x1ye_x003d_22 dt:dt="string">7pvlc7qCUSX5IAkl2ezGc5PwBc1qqy/fJJh8mnhrmRi5b9Rb5XNYeYDS+3bq3f3k7yLHw+G3cFCb1ZOewWwqHxiHfE6/Vm1Y6GT8zmgIMLKY5Q8JGmXxeKVqPzwndiA6eT1n5+xjadSVb7ZDLQTA540yZ54blc3K3vDuoTiNfd8gWKe3dU84oUDmAfyNKTA9AEzsmq8NuTu3nbsPcT1k8IRe5oWKHqupS6qJHuUOJziLKzSpe9fEizuy7QR0XoB</o:x1ye_x003d_22>
+  <o:x1ye_x003d_23 dt:dt="string">gfzUFOROEgFjvqsf98AX/uTvMAlM7mf8BEUlkRHbRYJeS8/doDYuevmM7OLK+HmVx66TDXA3RYWEYVu9VbF0mZV5Nf3YH/HUUDujfrdcUwOfRwaZuRFFfnzi5KEzLoy4Da5sfbNVQvmJcfXolbkJkFFd3CNS0Y6CUlSohU+fKsEJkMF/ZrSLIt95C26Pujiuro0EYat0WD9moIZxbZuqU6tRQ+tB8j++QPrZdgShUPyoRMVOvnpvVO/+tmAUnNx</o:x1ye_x003d_23>
+  <o:x1ye_x003d_24 dt:dt="string">Oyd+CvLxIOoM3zttayn16NmbuXGq4ttGPMlH8xQpBv8tO7K+5gE4RE6oqLi6FmgOEIGNUMp7rABDauyoNJJuKgXybQ5ExFCoaxlzwG8Y0NVOVdvxg0JtsOZvznM39cllNUXaeElWIXOovQF3g3AABzIs8pAoKLZ30YT4p1F1m21hXKLUTTdBvd6rQ66jANFMeEpzNLgee5KyJim31lPa6HeiOypB41DSj9w5VxZNrIjDX1AtQtWTOoG/XXHpOFa</o:x1ye_x003d_24>
+  <o:x1ye_x003d_25 dt:dt="string">JPM6xQQFhh/gdEm62Vq1EHUeIPbfWO3xqYFFW+9ita6tn4MjeKgt77kwJVrIRiAJxiKBn9xsOAtwq11xOyplPe3a6flY5ZEuWtEpuS+snJxaGNcy0nzEgj5ACMOtmyEFN+mKubiSvilBrw7VfVWfmZYIe12dTgteUVb4U+zaHDmHPp2C9KLNxjZzEoZsW7rFquVmvuSNnMEDAqj0YLI+ynk+QhSRfqW+/E0PmIgTLx3Pn+lbqPVrXmLlMeM0aJ+</o:x1ye_x003d_25>
+  <o:x1ye_x003d_26 dt:dt="string">cJlZBF1wCWmL08/VddTx4UHuE0rCooRS7PkN9qNu1L6IYLBtU7ndR3QWFCEtxGWoZXaU5XGgPI8TCd7oBEs+TDnjAw/XGbqL8NA14Iw5cAyfbc0FavAy1J6muVW9UJuhX1ormNCg+bmQVPTqeqsBNMg8Ou+Ul2Pg1Ctmt1fkFk5BYeVYBMvfhcO2jiALJr0R0Zvu1ZWVPdkhL2NXH9ttI18phznDWMa64cIwCnk42kIzlp/X2DMrxrFdgWUlFZ+</o:x1ye_x003d_26>
+  <o:x1ye_x003d_27 dt:dt="string">B9MrdUl/sJgCWgYe0F9obyRAakJ7reuJWwbb+2MCn0kp0szkqMbkOXCer6xQYuNmJ+Uqok2xmSGFDafX7zg6MCsVRg9neuN+GeZtmU33rylQHSBPyFleho+68gok31aKgllJwd257Qergez2kvt15YJVZlY7L94Qmk8wV5RElq6SWj9REx7sTIFb3omygFpfITsgQVn6+IUr7ae8NowMVevcehAS9Tab0HEsCUfBjzSjXvq8NlmiHXOdLyli6DF</o:x1ye_x003d_27>
+  <o:x1ye_x003d_28 dt:dt="string">6DkyX9MCmXisvYFYdUiUOvgcxaU5DM8dr+oXa4L4NA08G3kN5kXdTyNy60R1mzpXJZM19WqFTsOBjshBUC7iIZ/xkwTRnChTgpz7qGdr3NNlY1Q5wq803RTsChmMIEKiQi6APX4oPRl7tAMb7dsmb6lKXSZdxzJSVVo5FLECcs1okVrDuQtHkEfCKU2LyQ9pVRpRvOXr7Cpr5z80Zw+/CS+OKutgUnr+MyuyBvykA4tnBS/zW0qVAV+/T4SPAb/</o:x1ye_x003d_28>
+  <o:x1ye_x003d_29 dt:dt="string">XTP7QjghnAoRncSVHJFTMuemA3fqja4DaJYUcjI8CqkCmu9p2xTxAlB8mmYoYy+s60QwEuyFjwGr1W3aJqBLaUi+JcJ04tbSkvtVEb6KlBxZGtkF8g/7WBw40wPq2OdMKI0qcA69NzR6i2vrSImlBA918WwaGZlPB06nRZgwj+WCV+zB6wUO8TnIrfsZFIueTn4QomaKWhFTTXL8TqoRTgf1VAVbY2UBpjaVIOf22T+EHhVp1e6k8OuSJNf1vQ6</o:x1ye_x003d_29>
+  <o:x1ye_x003d_3 dt:dt="string">j0o9/u85cd2NL9nSc9QybO572XcRvoLon3qZw5PVzxHlQ4Cv5GfeZoHYFOL0+zOBA/60iEBEyMMc5O2hcvPRxYUeiGhq3Sjvoxk8XQHrpR3FDmz9sklhyIAvWg6EZe4B98nRsu0q/W2BFIjLn24idiLhP1NcD8TR782oE/hskSYTHgTTt9TEcqTVR4zdWXR0zrbmfjVXBGwQ29OnS5/fhKXF7JF+lPEfR4rw3OP83HK15kLnuWxc/CCqNu4LyyI</o:x1ye_x003d_3>
+  <o:x1ye_x003d_30 dt:dt="string">HRdTikylshc6yXzw90frtzmWCuy6Bj1Rc0n3wlNrpEh8U/3eih++OBLrNDTyUQ/hdLsYNVrIsR8FL01DYpmHqBYKj4AveP+HEroxEmTMf8kfLBN6xXpUtbJU5nxVA3Y0fhsVMoDyr3PjY0q4AVK7sJ1f/M4oUBNSYU5qsvpzRX7+FIh2aUjQVtXDj7miCcKxDBzuDAS0dyxuv95tNJYJGz2wKDue8IcFzQ2MEoh8vXr0BVsjOvgDYBU2+dZDoEm</o:x1ye_x003d_30>
+  <o:x1ye_x003d_31 dt:dt="string">8dw/60CV8nAq0BCbXo8ms16f2GcWSmbkdPNHGzcd1q/QWDhczQ/xE8OZyTdYKGx+ajx+QPQyx2CdcJ5l9K4wJLGFnmo37kmSst3bvPuCtkB0h/0A3+/XyzfjLcsJP6eBiQ1F+dFRc+kl9h9JoSfo47f5G2nOGMNJ9gmqYv7JPMDQmhWwjVjRZSCHMXI7nPw+9RFvLgOkxv0xzXkDzE/CsIwCWmr1u2QAlT2Fa/W9fJ0MYE2ovH55vNkaQ6/0Cdz</o:x1ye_x003d_31>
+  <o:x1ye_x003d_32 dt:dt="string">/341Ha9SI+z08d1HCzH7gyse/cYtoHnUtpo8vIFxTrnv6TX4rwX2V+Oa84aa6vJIKEri4cdtjiMKXY8uHcAwZJfDAoWPqfl8DPuRvlzB9v1iNSKSmCE/fF2+ssSpNbmIOADRT+jMmF5fZ+4wI758AglgJB1n2j6zQKHmx6P4r+aEfpJH9DArigdgl3V0VLl/NPgHHBO+nk3qA2B22brliIyCSfDdq2tCNro9+8RaDrk+JLKiNd35RfSm5rfFUWc</o:x1ye_x003d_32>
+  <o:x1ye_x003d_33 dt:dt="string">21E2SfL01Uw6vQgjfsO5FC+sFTPFhCDx/Beob8UbBTITmougdHtLyTCk7QItgcy9IPNJkjmdAXvrtuUYTgYkIGdzOFN+bTMJGgWwGFJcx+R51Dj3tr+lk1pPTdJZ5mZakW7XkLhxy5Rq2cqcZKBeVpzN+NfrWoxpyeRpwFVdkm51W1AjbSX29SKzwe2tfJoNA9Gz8NisTGclVXLcLz9ggjx7cLxG8iCVwme8kvmd6gKVK5ZrIXMMPeIG/d8uEcf</o:x1ye_x003d_33>
+  <o:x1ye_x003d_34 dt:dt="string">zgD0rCz5xKrxie4X4pHUDg4GfBovj45J8QGMG3hesvgm/2YWnJZOP9CR9szkmx7QSxyhJWtIJ9s+IkbeGC9ymnNli6THn598uStYDejfkzevWFIMd2xReCio0rpblO4QEvgNeZYYXrt5pHsIJiBZwlIO1CA9TFSQ+lqW5IlkoBwtnDgqOGISHAC1ZtpXnQFv653LgdFFN29QPyj3DyR1Nk6uIO67J/cR6GN82qTlInBWGhtqNOO0vmC7qADNmLX</o:x1ye_x003d_34>
+  <o:x1ye_x003d_35 dt:dt="string">aiNSu8aeafq0EbpFlOh6wSXjcHQ1tzff8LsVPkzJM1yIDlsfmJoIoCn6IF0trmsVU0319IvpaXZmNy53zPAblpZKZSjdnpwvAUrugl9FugPHA9gk4jit99E+jPMArKaQGxx7OTihAAJEASprHN9bJMfiMrARLy/P6UG5AFiHXhjoAcI26pIRU1LuCj5ntc2n5Hn2aXxZcQD/7n14l2AcGwLUVLXci9r98kfINfkn914NhZslTQyiye5eUjjoaFq</o:x1ye_x003d_35>
+  <o:x1ye_x003d_36 dt:dt="string">PdRUjnejV+rU/FCJ+eMP2ELoS6Pfvk18LlOeuN3fIY2mMk0I8upX4LYqaAPHPqjeaq8I7jAT97tVnE7o2vAuBGgFCYOBL/PW2Qa+EdZoazEiCxhHEDVeakM5l11O4NXy8ezJkbWEW9xEHqVOuQ+CiQdPVbXPd//cMAGtR7OmM7yL290drxQESC/r/FsKNPRLeYaEES6OgJaLggEX1UHUlZtc87QmqQK8FlyW5X51v1+FdKU3NCTOJaZF+kA9IG3</o:x1ye_x003d_36>
+  <o:x1ye_x003d_37 dt:dt="string">LSYE9fUHzMFn0pwFVBvUTwtsDiUrn9rZd4GnDnXYT1zzHzKfyOkPyQzD4kcOXXftRsEzFOGVJSm0sTH7g05Gb5Hi8FjV9HFaiDcH3fiqRdfS1a+GHgILPid/beBbZqttuyBas7Jwvc1VlSE6bgdp387lJtV8jE0ZqUwap79kzezlFs20JJ+vvNMQYk7Q2Y+1TS7DedEDQpIZzIoMYmZkZ4tSp97lIkVN/aS0VV9t//CTz3Elg1GcBAPpnJiJ7MT</o:x1ye_x003d_37>
+  <o:x1ye_x003d_38 dt:dt="string">yIvb6S1aTqKg0I9yy8HscMAYSmAvgY89RXuC2SZ3N+kw59zqYRS+fIt4F8Fl89SPQfM9GJgusrZu1cxF4Uoo4/FpuhnMu1Ht+bbgfPfL7JzxlCLtCkBhCw9Djaa8s/OW5d78kZKyj7gl90w6pQxjUQLYa9L1EJaYNkcdFheW4sn+MOCwyFxpdDXkINoY1dZnm0wT01NusraAZtul6wbfturWjoQ5uzVwsMqt8bnD3fBtp0fLoNPnAXPIlX6tZCx</o:x1ye_x003d_38>
+  <o:x1ye_x003d_39 dt:dt="string">8RlJizgC7hs2rHEJWuggxd9KyBA30rCNIOx7FynSt2P3u8tZSDqksA7RaKIdwYaJH+YL1jiG4p+vDRSUj7GXiXgzvbuZOmZlTw6XtN9ur37dJZmnzynxc4Ti85KGCUmnieJzI/xkjehRR2bg0P+gsCTagiJ/WArBBtGZanoQbeU5qV2+EpBDnArlQ91Dku2G6G/IDqnmPQC4kPJxel7/Ju8KDDI3bfClaFa26Eck6P15WnQ65p42t2BVgtq2cvS</o:x1ye_x003d_39>
+  <o:x1ye_x003d_4 dt:dt="string">mIU7STJe1jpRLz/iYMp9/IxLIU25dKXP0HLMBYiwBMoVJ+HSx75wHQ+gu4qlIBr8rGLlyweOkmXleaWtOgAaatfYtEut53c06mESoh39UjOhAoA7kY29fKr8ab9Zms4u4FetEGtcOaqtYcQQLfJKn7/DytL4rnvqjpTh406YGS9Mqr9TFGRAcjgtKEfC11MkqlZDGVAH/7LDCRgfi/6yXhJhJLCyuwYUycrIYhdWRiHo12T1WC6rzZHKIHOWHMP</o:x1ye_x003d_4>
+  <o:x1ye_x003d_40 dt:dt="string">ra/w6rCrsu/wL2n+ye3vgin3dXPsgC446zrWYzIBGdWBOyvP2n+sD53Thmnbfbh4G+xVBPWFO7jWqw29fEuSfxX14z48CinUTQIidvGzcvgJn6uZCez+TxrquZ01KlqUDP6e6gb1cxQOT8VY1ZpiZaa1FXXaP7xXsmkg5xvkI4ekwEoiQFwpGlyg3FOyqEYrHs/Fz4NFtHnDH+fu+r7DSfLg09ONIWJU22uhFtZBXKqQrMdo7RNof2wCB+EXGOK</o:x1ye_x003d_40>
+  <o:x1ye_x003d_41 dt:dt="string">PG8WIdj/dlZLu7jovTi6IToOyAcB0KqJYH3Ok/1kltom7B7etAlhZrgm2SCRwHWslKqSu6pkzlBgrHujVys8N/W7Xsfli+kyVx5FEHYncQ6Z6xuwn39/2VhUomr+yqJl9P3X74ChbxHyxecTXEITinQosjwkxDqma+ImfyehyXvK+g/u6DsnA2bxkdB1SX/LvK9/uUIXV3ZyNL8N6H0KWhZc7Rgsp/anBhPTriR9u6UtmOdUR0EeFEBN8IqXQCI</o:x1ye_x003d_41>
+  <o:x1ye_x003d_42 dt:dt="string">8SAd2t84JNRX9/DteWB7Ews7qhdkA1NvEECQUHdP3T1k481ILV6q+7V1C/oCV0nqHTc9fWYrrXtl3eQJa6GuhM5RYuddvXw4YrQ/Xr2XzIvvrGDR5OS3/dJB1KPwCAWiybfCDO4Vde4iucdQSWYJeYiUSs5nUXAuFezTE/5poWrJnzeqAnBMd+fdW5esMoX7VVKt3QrrIb4kdXt7BmgCm1kBYNcRrYpEefvgKvuy4cQh8x6sRQZpbcG4Y5qGyba</o:x1ye_x003d_42>
+  <o:x1ye_x003d_43 dt:dt="string">DhxTrjXe0LTiOFjmVVhdvnGMBr22hcoiLjVTtx2Q8iWM0ax7eTZebVFtSDl5vblWd8rWY+Tf/Zy29JaN9kUPSzzMztn/83SKGfZ+Vsb7q1U8/c3NHsu9kHbqVaQUVjERAXWzn0CP36ZKkau6Z5iel0cfR6MP3DcVbVYmvxlbIveuGQm3qjiceZ+Rkj/ZBMSgrEitD53yS/CgUrUa2CfPtNtGhi/w1sK+/FTFgHKcLrknE2gZYH56Q7zQ0Jg1lPi</o:x1ye_x003d_43>
+  <o:x1ye_x003d_44 dt:dt="string">nQTDdzPLAKU7axSBY29FoedeRQ2Dp/o0PcUbZbdvSP0kREoipjUK3reoMLoiYKJ0XbIhmXvwwIKAKH2ZPVcTALoluMPjWrXRd/4h8IjrU2Z13a4u81zar/mtP1eO3KdWChoyeRbqSpfL+cDSL5Nrkh6UwO2DiKX1TOjdhaMsTPSM/WaDwllw7CTU8tm3jtfY1gC4AJrPFmI/wPcLeK9VJwe+GWBMTyGyGq8mDC1cpMl8Ip3kIP7b5ILS3h9YArM</o:x1ye_x003d_44>
+  <o:x1ye_x003d_45 dt:dt="string">b9DyCj0UgOBEiOayYsgy+6t+uzlXFJf0N6NAN+Ri/CDzD/LnK3RlKlXqE5a6t4TuG8e2saYR9Z1kN6NMSRPi73HxAW70oc+/nSu94VK2lJTDtCN0bWa00XsRkm1Wr+GbvYAcW/LYNLzD8GS8LVW7NW0IYVlp5Kt8/3ma5ugqswkuMRew4fvyIP1jVR1jEJMZ/qx5WjW38gaQ8maQCovDngzoxvO5McQp8b8Q9ykQbw88sjzixXXE2bvmMhhtvrm</o:x1ye_x003d_45>
+  <o:x1ye_x003d_46 dt:dt="string">rpvTOG6nNuXxVE+H1ZUpFFXAT139NFb7jBYVRT2gr0tHaiYHOq0xRR5qfwENY+9re2qxyDipeAj/wU5tau563q5vbB35iekW+xbguHZtTApgn9KdVH8qpwV+TvUZxTmR4v9x+nHfpKuwjFk/IvGoIQfzmwpTUqfCjc1pUUoHc8W4Yponleqvo0SfxsEGmMlnhoMwH842YAbOhURO9I2RidDZSrdmaNUgq1nYXeg6+ItbzRm/cemxlYPjCIRPDVg</o:x1ye_x003d_46>
+  <o:x1ye_x003d_47 dt:dt="string">lkSB1FvthKWJxxzwt3HJ2Y3rh4xeEwWzr6r+Q6YCaGvMZeUp0HiRlD7fdvA752t7ySUF+OR9DB9DEkTMt+WXbYj3I3QX0c8nvpgJ4ln0SUlo+eLXg3mNqdsCJ5q/uK0ab7rz1nIu/fHG1z/HspdRUHEZuKbAkV8CWb3fsA5esfHFGV8kUwTZRMgt3ZYmR6921ELCy/vWZdu7okvMV/BEnFvA5LIZxQDtEXimoe/GnCQbZQCFHBZe6dMG/AjEMGO</o:x1ye_x003d_47>
+  <o:x1ye_x003d_48 dt:dt="string">L0Uqoovifr9g/QDLAp1Ach09bPMDD5uyHr697Siyqh9EFfY0sH56mtZF9NGPJ9EMlGSFsJjgb2uCvR0WXS39ohGCnfZHEInvG7kJQiJ0MS0HRLsxw0mXdVBkkF/Bt92mg8oU/YFdtMxfja9c6rrYYlVZd52O77XmbU6LPBxQRbnVTWNCvtt2UPULr6avJEOVuVsd92nZR7IK5OBTrMzI3nJNgcjA5pVj7v7oUdKqq08HfSwFBrunobN7HT/TWHo</o:x1ye_x003d_48>
+  <o:x1ye_x003d_49 dt:dt="string">5TDpN0f2qRYvVR78MgsDQXudS0MSzOVuLN+TPylbY909UnZfirutnVVcf/XW8Vn/o1wNfu0H85uvbtt/EljZnH86HVdQLHk1cmra6i2eBsshPlbHApyfhMENFUVvNPyBWYuHXNsvx4PRDhCw4QtmeYQbDdRm5A59r/g5UMUEhpSn+Qb9V3jEL5dHijhNnUCxsD/0mgyAZF7UYD/tJqg9hZOF4LKIGdu4Z8keVtqCB/RdiSqmM4xlE5LeFvMFvzO</o:x1ye_x003d_49>
+  <o:x1ye_x003d_5 dt:dt="string">00CciVIJL1E+Rdx9gNK8T/K2pePDQD27RUO1w79PfOYZ+SAK9ZTCRTs4o0sMIUvsXz2XOqGFlVr5J4HtIhvVy0dFsMrKXXXoQxhj86X11syqt7E3aF9htwQbL1Xa2LkiEbFPnCbj52bYwYJ7qIDo3Dn53UjwiOwA6mnBpVynDL1QZ+WNkhClthHd7YaPRJrGtg1iCwHWNWk4msyzvsN5Eyvl8yYYVPjBnEQyWOB6umxr/i1cTJWDmOhxFKD/UmI</o:x1ye_x003d_5>
+  <o:x1ye_x003d_50 dt:dt="string">+Eix/MCN7WOEgfkRgmlpkHfY7Q2xyxN6pwoWp8VkT7igIOIoc+vmK+8fb81+y1J57MsGWiY/ddkoKO8vLdteM/NWca+9kuR3N6vu91Zn70d4gw3KjFW6KC6rqjC/joIqyfc/Zl5bxUJQ3AnDdhWSjKblXJ5eoAuVv/bZnaCS27z2vrTcKlMb/aQKsXQfcLNsnqF2lOK1UFZRNidnOQlEGd0JiGoOZfrSSdDIut8sGBtev84XFxzkam99WuhOxU4</o:x1ye_x003d_50>
+  <o:x1ye_x003d_51 dt:dt="string">jrusjqUkdEyJo0umGEDC+rqoHyRb22fNVc01svDeVmUCtHVdD6YzLzpC2ZTq71gEIcEHy/ctNvyZTv/kfq8S57lqIY4nFfh92MkFfJW2Ko5+z8gH7F+gH0+1KDPyU9fRlHPrHEBWBuAtnwKeGjsn1P+KCdihpt+JAWxhZ6EnP4uwIe1TvqbGhGE5vvYfCoQaIeTdVyCuMw51tirOJBMHogklo0XF1YD5wn/q2rsarOdxPRwdYxNebntur9dBzgv</o:x1ye_x003d_51>
+  <o:x1ye_x003d_52 dt:dt="string">6HWmqjDV81lb4wIQUDEPl16boWKHIlO3tBj00umkUwx7Gd2rTCq2OwQVYPOIIYydkuLeSouMD/vmtOoM/QF0t2v7RzZ6GLn5PH+wktF8ewFlCvjL/Xbo+FOO4BQ8nDtx6QbcR5hsu2Y6lMqS0H3vLh0CuWsY7SH04oecZ7t9lDpr0AzRDzBSL5z/fIA7nKJVcY7qc8RUND0WzffE/gxtSITxOsO9FX4GGzmeYadQYvAquoBAwODAnz2S8LKT4y2</o:x1ye_x003d_52>
+  <o:x1ye_x003d_53 dt:dt="string">qDjDJcp1FcKRn+Le777VIzU8EBS+soiciUlvXw2M0Fws8dFH+y9iUeDFcZs1f8Tku+KuG+zrUAA4eSJjE4LC4gFeCae43cFVgIcVVSKK2g9VnAaH2mEfog0t75+8GokhjVEcLE2FrWgu1d05ZsAE0W+4zufW4VB/mllhG45WGVatrSe2eJjLN5PN7ch5sl7WoMUmglFhgPLy36tjWhJGTKnx4n76HFtF0zQ+l6W4ocroyD1LF7hNdv2P6MiAYc5</o:x1ye_x003d_53>
+  <o:x1ye_x003d_54 dt:dt="string">yzp1fhZx1l/AbMqfCpVlFk0i5fcSxPql01+Ryx0z2Y8z7kYNQYDMNTAPJZWbNtb5SMkuZkc8YB+viRucNZPHMpG1P9Zn1lqsbvOwaaI4YDEytV2wR/qDtkQbazhL17apydMfbbNcOUoH48aDqNhXdEDIjqq/te+WnW+NDnGWE8YmaE8O1NSSyVjeVvm9U4Et3UN3kdJx1YV308L+J5ysHW39dh1vYH8zw48LHgbvEmSFvCYq8G02rWIMjVY58N4</o:x1ye_x003d_54>
+  <o:x1ye_x003d_55 dt:dt="string">lFCSiptemX79STd+xqzsYRGkcu4RuKdVbzzfPZmDCJu6mr3+UKLtLcFSKD3SlCMUv3oYtRIQCAsUwR5gT8HVhlCIKYQo4IW9Tfw9vRNINeiWtoxbmMZTFgsyIcPajdoopT6Rov+g3vdKKwz6W7qtTZ2+O5N3Axr/OaWehIRFcP+OdpvUf/OH7FwecVXDwqeBoe+SkvpX9V9Nn041aX3LYPruMKAM3ExIb6wXTKivCDgtaIrv+OHuC7m3kwCWw3T</o:x1ye_x003d_55>
+  <o:x1ye_x003d_56 dt:dt="string">hN4S2miffpzOZG7a9qHmOVOzp0XTq+O815rENSwPdrz02V2LjSpyAsFKJa6Fg94a/qFohaHHln+IQ9S9XKO7XsqPRgExr+RZGLaaGcDl3/d+8/ATKS95qjqmAxUMEWL1m9IeYM2tb7/+R1CULljzeSiLM5hhmDgGnNSFjgdokI2HtZdAxyR1dFqB7gCspq3bgeoyvwdhvNoJ5CDIbDqDxU8ILgbKs5Z1XHeWR0OR4uApnJw+WF3PnxITP3X8qwN</o:x1ye_x003d_56>
+  <o:x1ye_x003d_57 dt:dt="string">TGh1Pk5bRZ2pCjTSE57XgDdQa/tk2++ECjojfxAN+N82WlSliyq7CLhLv+6F4uZoiDJNFmHa7m1FyoJNj0bi69jFYZ6hj+wHXKLZql/Dy0djXYn78TtZCXukARBIee7yonb6bIFLKEBr0ue4sZyJ1nB43vR5HAtRounqXDbnzslKC4N3g1ob7gkvGceAHdGUOyUTjA2leAdMZ99Bg+u34ER3JFmOla5udAC6lKMgZ7DJffjfe0/DmSORqFE/mw+</o:x1ye_x003d_57>
+  <o:x1ye_x003d_58 dt:dt="string">Yw1hMNW8JPLBrY5ZeQ0ywIKS+bjBwSZ6xvoOUtp61TRe46Pqfw8ZzurLzWQY9MOqymjrFoDlUJ63HeohDhDoNK+lxatPSehq0Fv9eLjG9nH8M7WB6TMc/7mn2+YqPilySZq006xms4QAErS1Ln7zXpXHxiYqFzmvRV066F9OpM1lqIZmv3bXXEmj4zjhZAv5VR9PysmQiy+xEGUZRlq0MS7bxzZvYs5FbDRDSOkbwR33Fb6MEO1q81EhwFyrG99</o:x1ye_x003d_58>
+  <o:x1ye_x003d_59 dt:dt="string">XkTkwCdGaeRjThv7Ppi0kCx+RqsiU6RuFENKGEMGVVkvDplVmpjQbTX1uao/w4u/TpJrapikWZx44bwxn7NuA+XR095dMD2bUfw3GxQ8E0SHSFqKf9pGv7/P/5QuDRaQpdLBLvwe73vzGqwWU/zcgXR53tOn/OkRI+cNdk1pOQY3jte/35sAbUsNAFhqdhZJanDgewETu6kHD3y9fGhxV6ccgVRSc11vX6nWTgt1mb6+ByT0QS/4c5D6Deydyug</o:x1ye_x003d_59>
+  <o:x1ye_x003d_6 dt:dt="string">rvLiyUSRj2g4TOdNlAGPtOzCpZllmaJ7gDSKLwsJZiEkdbfka/Qe3yobeX8TZuMO6rq+bkr5A/nfCp1BzGt0zgl/Q3U4beN1VVPhUYflnGM5Kzeqrk6Uw0UMlyIxQ7Sc/Vnym0jCbQi7ySCkJ2Q21DxB3QqZ67e0o+M9pYHEuTjnD6GkfGHx8vxBjJJugurg6y/fItzKlIBy9PRWyL2Yy4kxUsB2t9rXxXS2n5mN8XmbWqnacT2W9Ym3ET0Vgkg</o:x1ye_x003d_6>
+  <o:x1ye_x003d_60 dt:dt="string">QpL+mIDSSCCbsGFjj5mGLe1Oro7etcin+KISC4tA289fV/3eb/CDo6LaBN56gg/QZx55ZJjWjrJvtRorvLmeEJcOTY9ibzelppq42ZcGv+N7ogD7F5M28/dDN0C/AuTiZDBQwnHWO85eyCCJnkY0k/ZWhXj7ivWwf2CC4Lo9i/vWkr7Lk6Z6S8OjGlFjRp/yDdYDMNqo97mzMpjTJuxmhLon+B5GxhzBgDVQEwClb+Q2F3vvveuRDyP4kp4mmjt</o:x1ye_x003d_60>
+  <o:x1ye_x003d_61 dt:dt="string">14Fg1BxmNhXNp98fpyVOx7OuppSMrTBrtXs/ta1Cj0r0izkSC49GgeAyhTJQD1/cMbn5RvV72JA7/QK+AO099i2Ny7mLJdsDLkrIWG4Hcf2u+nnkVqETaz6XBGHzmA1DLx64cazstQCdIGsVezCojRm2AxE+1nJDl8somyZm0l3HC9aXtFUmYNdYrHRv4zwpRf09gDK7BAIxgfCQG+yHNI9bQx0++GxtLTNxcI7fRTWZ4ENrQ9Ofe9z0GyYPJey</o:x1ye_x003d_61>
+  <o:x1ye_x003d_62 dt:dt="string">L+AuflOHTs5cPJwAMTW9GHB74a0ibefMiQ4p6bi4PUOphAYsambxOSTcJlyPkuvbCz2KtsZaoWHEc8xgix+k3glvUs9kScwkSj1NufcqL/HtdLaE0J17rnc9Yjgl/ScO1vaWuGoVzRDom7LOH1SutzXdanB6Hk3fTZD3W//r7pucFDMLv+phDRgbfWixkcSMcl5l3dTGSJumbbtZCzgaXQAowyc7PENFUgh/J9LkX+jxZkwOd2WC6RqGtV3gi6X</o:x1ye_x003d_62>
+  <o:x1ye_x003d_63 dt:dt="string">dXSTJ0tVaHc/RzGDr8zsZlZE/qyfE050pzpdH81I+d2sroAgCj1VaLTqgpPDdFkK+0dshKT8yAMPFVYL9Bxt3WM4nsJSEMhFKw+ABxygYhxm58fy1tkC/nA07q/StWldaAdUxsAUWtMcZEoU8d4yge1bgXCFsANCQ+ET94oVlSqDX7cG9at0BoAQHRvf7/Y7BwFIwHd3XzJYKtbK9QUUk5MVn4lgmYFiL5vvmsfC+r7mnoH5dT3DQHYuB92L3Oo</o:x1ye_x003d_63>
+  <o:x1ye_x003d_64 dt:dt="string">CfTQEJO0xBfkozCh3sAwdwDA4QzzRmAwSIlEUlDqgue8MDsatMRg8hd5Npy++Ly4L/8kaVcEz4n2nWD85IyrveeY+hr9Qum6My+pfqmm+UQSaXLi9fel8e4rjwTa+JkN+tH5zBk02qbFD1cVs72A9xgAX91VtNB8ExnnxoefdZn90fRTwoESg6N/cXE19bOirmOZ75p3X/enSZ8b2QVq3McTSKrTXQuzA7934N4wQh42O+sgUQTuk2e5U6qr0Pc</o:x1ye_x003d_64>
+  <o:x1ye_x003d_65 dt:dt="string">+zkI/OAdpbCud0KMNAlRk7ckoSSqyl7HV26T9LHpglHINZXcGOZmV1lR6RryMMCjMaJiMD/o1R4+qJlw9V+2nMkENTFN7Q9eDcJ8WLbmw5fjzREVj9BqLztqeNigo36Gt7DnZu7TP97i2geEDbLYSPkeWkao57JGqhUqLq2zPAXJAnrpt6Pvtv/J8SdZe4yldZf1M1Ge8u6fKxdEPh/lAvMtemLrrG4fZFCYoQ+84mR3p7xb62DLy2XyYnxYspR</o:x1ye_x003d_65>
+  <o:x1ye_x003d_66 dt:dt="string">5/XJiKqtnZcqHz+QEPBOhhA9WeMB23dHwCf+HvBUSFvfDOVzDUjdN8BcINyaNYf6mcAGHvAIvOK2G+KgChKSM9QQPvHoLU3r3o2+Jm67l5dO6dvuvhCeMdYBngYin1t/3YNgozgHrwkdRqaLxx3iQihtZMCKaYPwV2iXD6yTCYjYaqJuRraVXvL8KKHqVDXruZp0uNXk4Q49zbeSz4BuDT0GU5mSV++TL3bQwbrqxYp6ah7xGP/QVZjYz55zeI3</o:x1ye_x003d_66>
+  <o:x1ye_x003d_67 dt:dt="string">L+KzSJpVhiMogtigNvgDRq3xn2GS+MOq3/8K0gV+XLvORWCJelu5Cpkhc4v29vnGZMj5IVxtV+GCXSkGOYC8pT89s793NA9+oToxKWMXT2p1JVSUCqDnGPSoWsvheQpJjnS+QOECdE+PPqz+CFI4CxAe+ZCQTV7W6lprO6AtO8zuUnI56cF5oa5oow/yRVgth3EX1sVfKIl7tqRDhGYe2RySxv2sIyvEHy5t0NRjervE9pB5T0LU+EV5m0jvJIS</o:x1ye_x003d_67>
+  <o:x1ye_x003d_68 dt:dt="string">r2CHGedDR/tgZLhooJVoiKSOdCQZZWkxqDvYUPOTI/IEbdp0irRfxfZr6rK9oE7RWxixEsm0owxRF/ICZDdDPKnooaV52IziWzt0q9SyfitZ5mWmxvtBD0LP27zQHWliwgBxTTZ17OVRhnb0chXQ2AgfwXVZ992kWk76iN5Kwm5T86LJcOd9Q6mCg7/+2JSt3JNaOUJFaRwox6A/kyrCCqVFmKlvT9mN0/RcPiAjKZqhXknlJUi881z2cVO/qOU</o:x1ye_x003d_68>
+  <o:x1ye_x003d_69 dt:dt="string">uG6p2r3EM+A8x1pqJMIIZW13N4qPxXR55+jn2/ET8EW9htg/Y40KLeXnx42WihvzDNJdMQMT7tTHt3hhrMPQ2UlGuHKyP77wWYEQxhNgwXRmKWnS4mKCcndi6tjFbMvKsTDoqaSuC4R3WbNUHnxL8+ktXk1kqDU4U24KYYy+yoZr6exTWC9NoSjmwa4/vPlJ858hJAVRzTn2d/ivGiIScR0v7He4J7GUAkzjJPJxj8L1O3Gtn8XCuh8c4MQuhfA</o:x1ye_x003d_69>
+  <o:x1ye_x003d_7 dt:dt="string">CaHj2gQPwBc+HRDv6PqW8aTYl34E7x0VFYMIbev1yWtyT7D+fv+LmBb1lrY1+t411zIxObMzAsFPtjpmXBZ+MtUWQcQWGXdpSc66LwO2XGhfYdlFOKVoIV3H/2AgspGu6/cm0xNx0JzN+ZUfxMaOHr1tE6kKURCSMm0JC90CDBoiVx0pQErO4Te+4R7h/Yr4qPtDbo8yDicQ4YOusG/fKVYN6kKpzYEz/XBhERQHXQmRqSimXUw9g4nGaJ4NXvo</o:x1ye_x003d_7>
+  <o:x1ye_x003d_70 dt:dt="string">sG44hX00Zsi1diV901i4BXu3joIUj5byPQnUKrbt9pXPi1ee6DyUkDrwdqUa/UyNgcOVZZZJ9IaB+n8tpnoNZuopirsfHYX0WPaTh4n4gfyKm8OqnHW4OWR07BJ7A0DjLwfe0tQsJDC+8MlM07bokbgenueaIlgLVfyfmMReXqUG42B54c64sM6kfuRoeCGolqZpcBBqZQ4VPVnAjg76tAGZwJ5qUrTQcpV17QJtTdnw25Ln1Xn3PNe+Soy40uQ</o:x1ye_x003d_70>
+  <o:x1ye_x003d_71 dt:dt="string">MH9MsQ60gBO5b/vaukiHHAqSHY7AvR+8A3mXxklahMB8d9fuOTmQ05OFRh3JrWYGLHOg8gqtQzJeNw8X8qS+OWA33U6I5ylx6HYa89AuJpuG+7d182zy+xHzZ18X4uGAUjdl03GSxMMqL4SAXFdyUOnpUOSQ9aku93LqvDSjJZJBxMKXBKGXyDsKgModPzg3pGBa4JFduZYYfyQ7u415/OVBeNNB2kIOkzFje/5kjhjwHWEsBBC7Cx3ziVrYAyY</o:x1ye_x003d_71>
+  <o:x1ye_x003d_72 dt:dt="string">fQHwLAJwoAa8EdK6Gh5qKLTEspq97SolParpgDqRZDhRGkYcoDWAEiw/RqY5ILFpfLhiAU8hoFWaZRv5DU+psKPUXg3G1JtUnEgfI54f8VqtnbncdPJa5GCXJQA19nfrVMTH1t3jdHQ8hg8kEDCO0uOjr2Ox2qBYMok69WCF62UtyaQbgCmquw22MVmJqgt6tZWq9THgnjPFh8BekGSdaJqTUsgZejmSLf9Z16reasNhx9rwwtz/Vi1hbWuIZlD</o:x1ye_x003d_72>
+  <o:x1ye_x003d_73 dt:dt="string">nuxNwTTA2HYPgJLEFr3OT5PPmnoYutp3sdAm3sBjUrvv93tVoTp3zdqn8HIX/2xaaHfiFoFvojj+NSDaO47bB6qXAZv7GIwFIr1uQispqNsohgeOeZIVzVtqoxLnu6KW0XhQMRslJHS1/UPm95d6Vb0aUaD941Wbz27iKXBnFkCxWynC+UM9SPc+pQVixMmPLK+2Qn0jptx56fND6eB+xJorIuIV1ZpNl84lzx0/tAhZx6xCcv1HAE5+8C0Y2vx</o:x1ye_x003d_73>
+  <o:x1ye_x003d_74 dt:dt="string">3U0Cejz9yt9/Mp8Xkz7g98HonUDSxMMbbHf4KdGlFVompMAugVXRdV1zIOHt9Do83EhChEE1t/jwVUw59JvQPNjG8mOGkbe64Iw52ol03mtgKr3+L7Us52lTffwJ5kCG5jWYD0U9yhMBE6ki4ZjsOOwJGb+QaSwXIRv2/CMaArDMIyPSgU9684N4shgUlZxAD5BltYWUKcxinoNIOF2i8U+ZA4mBppSgrL7TZNLSA5EOWWHWgz+WEFP/tH7Pcfg</o:x1ye_x003d_74>
+  <o:x1ye_x003d_75 dt:dt="string">SZ29pkflZfUZEwrACmWFS/0gpjC36H7EdqkM00em/3atYS38AGYoiyv54XPbFfuv3do+nMbnk6dJg1JqducBkfoynirkfaicjdia7LN4Png5SLN+t1aCplwvIpcW9RXhaq01q6g1ZrhOcbbKg/mlQ4n0G0qQ4sSMJjgS34L1Y7/oUiNMz5IPQCGgzxlCS7gwSQb+F1ZFa0lQ6SahxgQOLbbtW21hrwUFxv3MQnY5VEDsXrUXDTf2OUJdDSmqvbX</o:x1ye_x003d_75>
+  <o:x1ye_x003d_76 dt:dt="string">yOczfRPsA/XjES6q1FbttTP8Uiy0o7670dEoxuXRWW6BhSNR2wxoGguxheMcHn/LvKnzXKYHHEaJTRzEhV4srrmC8u86Z5j7AFiuicIlByi+pTRRbKJb02TSr0D76XiTXJr3HMzx0+B9TeO5pjPvcihSziMO0DBDt/ALUIaZRihWzsvXhpeWi9QLIZP4o+wU3+822gI/mboOdSD9xmW4SPAFrTc8dG+9rIgQjGtOSv/lEOl3IN6Wc0bXfsz51/I</o:x1ye_x003d_76>
+  <o:x1ye_x003d_77 dt:dt="string">MScbG4gJV0XreoeRJP71ltxzGjWrEjlBkMib51LGwtgev4rmc5Pph7QygOOxngpnZJwX5N9dsC79Yhat80LxNe9UcPSSCvWLX90JLVVSLMFpjN6UfrvdCrxterVBC8Mh6uBb85FQTLILF7zJM57fr9mTyaNL22au2Y+2hKDAoBmmKb3jxOoqizOKXY6zqzd2ZJJt3aHNSoVCppLG+aFo1XONkca0sh61+yG0Pdjo3X5PiQV++eTIf4NNrTeQlgt</o:x1ye_x003d_77>
+  <o:x1ye_x003d_78 dt:dt="string">9sGVR0RmfdSTck8cVQLlCYDrrPz0YHlHlXaxulMEEZzbkv9CSUuNusNirnq7K3ajGTSqOCtTnsDgMkUEaBrzu9jly8wQyYgXjwTqb+64Gfxn3z8SJE9etsSz3AUqgwBEbbeXoX4pd/wAV+qaXZeBiRg1y+sjEdwfaklDJlzZcf2cb6fAyDk2vwoqDKopAMeoBhfVYE+Gice2C3DiFe0lLN0j0f8iCPLhvOLaRM2yYKI8NqCci91wjW49TmM37lv</o:x1ye_x003d_78>
+  <o:x1ye_x003d_79 dt:dt="string">kkVEmq9phbYz7sWWl6ob2eN/ezjnXd3sNZc3HUWLTBzMDrkx+6X54PTHFmUaHwTP+0sWXLQoDY92p4JzoNIIkX0OwiKmjiBCezSrldlYFlLACraY85SGyFgMSMhlwJKwouRJH4dv3E6A4mgyiUQERS6Wu6HzhTesrT5yoJcYTJ6pELo/i1xTk3gm39JG55jjBn4V2yzRsDB0soFZelLgU2V4JRc98YZZ8Gxd1TdrvYq2oRknv4uvWTNgYtYBJKt</o:x1ye_x003d_79>
+  <o:x1ye_x003d_8 dt:dt="string">YgT0Rsi23WPrtWO4j81ZrLwlTuegVfaLQQcfMbNJSCvksm/i7/pU6k2wL9znIrl5UPPcdz4EwV5EgEzXO4H+3WlhU9qePW/Cl6bdC4NkI3F2hBKaIiJGgGxlyIJBc1lHp+5c3t1p+lxZh9UFUNN7Ndgq/12bbmWKkDCgvX53xk2ah2LLj6mQIHYuFuUBOB2ZNSmIt10lLvN+GNQNfez4MBwmJ+9BksiIdEbJezP4rgo3bbh1NxV81nLjJ7F5ZBi</o:x1ye_x003d_8>
+  <o:x1ye_x003d_80 dt:dt="string">uptOCTQX5PcOZzvqHlA03TJTQ5IKw1FiFiQkmN9NUqm7YcRxs8qukzm5+zvtnIYxyVmJLOjS5kkqc7Ykj25sQCPsx36TCALBXx4o1T95mwdhQqkV0hjQYCSXcRnthFxKx4eQ7Vdo+kROvBbGL2CkORJN/RYpJVYoutYd7q06UtBgOhzIR3eXByNcrHHhdok1Pfs510FZgZSveewd2xhXnMko+988D+8MhNhUlleMj0rThI27zQJ+vdLJXOrSV16</o:x1ye_x003d_80>
+  <o:x1ye_x003d_81 dt:dt="string">IaCH47TCzLFHVrn5JEBT0T55HZpi5as7S5uFjI7kWTzG01Zlrwz5XkRGN2Pr37z+n5sE5+E8AAA==</o:x1ye_x003d_81>
+  <o:x1ye_x003d_9 dt:dt="string">wrTru8IbA2vgy19xY++FJeuAG8qfJcMM/3hP+yIi99YTlrMaEwF/ZUQlncAqWePBZmZ+bD9ueBFioQqXck4fntx9OCcfZ57TT+V0ZKMkkPHVmm872HmtFR3Ui0PFpOZ1WGzYvRoMW//c58C+PTcmANXNlWqZpcbS7CfPv9IJbJuQtdDjNRZP+U4TNM+S0lUYrhXXJTdXHmUIG3G4TMjKu76F9qehM2WsQoNndmDm/Km03AcOTnBNrKnIDZAwBEG</o:x1ye_x003d_9>
+ </o:CustomDocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="DON_FRUMAN_Resume_4%20Fonts_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="DON_FRUMAN_Resume_4%20Fonts_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayBackgroundShape/>
+  <w:EmbedTrueTypeFonts/>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2010TableStyleRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="59" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;
+	mso-font-src:1;}
+@font-face
+	{font-family:"Palatino Linotype";
+	panose-1:2 4 5 2 5 5 5 3 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870265 1073741843 0 0 415 0;
+	mso-font-src:2;}
+@font-face
+	{font-family:"EB Garamond";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1375855867 40 0 415 0;
+	mso-font-src:3;}
+@font-face
+	{font-family:"Cinzel ExtraBold";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612497 1073750091 0 0 147 0;
+	mso-font-src:4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	color:#2F5496;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	color:#2F5496;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	mso-style-next:Normal;
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	color:#1F3763;}
+h4
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 4 Char";
+	mso-style-next:Normal;
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	color:#2F5496;
+	mso-bidi-font-style:italic;}
+h5
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 5 Char";
+	mso-style-next:Normal;
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	color:#2F5496;}
+h6
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 6 Char";
+	mso-style-next:Normal;
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	color:#1F3763;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#2F5496;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#2F5496;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#1F3763;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 4";
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#2F5496;
+	font-style:italic;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 5";
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#2F5496;}
+span.Heading6Char
+	{mso-style-name:"Heading 6 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 6";
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#1F3763;}
+p.divdocument, li.divdocument, div.divdocument
+	{mso-style-name:div_document;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:20.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.divdocumentsection, li.divdocumentsection, div.divdocumentsection
+	{mso-style-name:div_document_section;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.divdocumentdivparagraph, li.divdocumentdivparagraph, div.divdocumentdivparagraph
+	{mso-style-name:div_document_div_paragraph;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.divdocumentdivname, li.divdocumentdivname, div.divdocumentdivname
+	{mso-style-name:div_document_div_name;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+span.span
+	{mso-style-name:span;
+	mso-style-unhide:no;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	border:none;
+	vertical-align:baseline;}
+p.divdocumentdivlowerborder, li.divdocumentdivlowerborder, div.divdocumentdivlowerborder
+	{mso-style-name:div_document_div_lowerborder;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:0pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-top-alt:solid black 1.0pt;
+	mso-border-bottom-alt:solid black 3.0pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 0in 0in;
+	font-size:0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.div, li.div, div.div
+	{mso-style-name:div;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.divdocumentdivSECTIONCNTC, li.divdocumentdivSECTIONCNTC, div.divdocumentdivSECTIONCNTC
+	{mso-style-name:div_document_div_SECTION_CNTC;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-bottom-alt:none windowtext 0in;
+	padding:0in;
+	mso-padding-alt:0in 0in 8.0pt 0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.divaddress, li.divaddress, div.divaddress
+	{mso-style-name:div_address;
+	mso-style-unhide:no;
+	mso-style-parent:div;
+	margin:0in;
+	text-align:center;
+	line-height:19.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+span.divaddressli
+	{mso-style-name:div_address_li;
+	mso-style-unhide:no;}
+span.divaddresslinth-child1bulletspan
+	{mso-style-name:"div_address_li_nth-child\(1\)_bulletspan";
+	mso-style-unhide:no;
+	display:none;
+	mso-hide:all;}
+span.documentzipsuffix
+	{mso-style-name:document_zipsuffix;
+	mso-style-unhide:no;}
+span.documentzipprefix
+	{mso-style-name:document_zipprefix;
+	mso-style-unhide:no;
+	display:none;
+	mso-hide:all;}
+p.divdocumentdivheading, li.divdocumentdivheading, div.divdocumentdivheading
+	{mso-style-name:div_document_div_heading;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.divdocumentdivsectiontitle, li.divdocumentdivsectiontitle, div.divdocumentdivsectiontitle
+	{mso-style-name:div_document_div_sectiontitle;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:22.0pt;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+p.divdocumentsinglecolumn, li.divdocumentsinglecolumn, div.divdocumentsinglecolumn
+	{mso-style-name:div_document_singlecolumn;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.p, li.p, div.p
+	{mso-style-name:p;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+span.singlecolumnspanpaddedlinenth-child1
+	{mso-style-name:"singlecolumn_span_paddedline_nth-child\(1\)";
+	mso-style-unhide:no;}
+span.spanjobtitle
+	{mso-style-name:span_jobtitle;
+	mso-style-unhide:no;
+	mso-style-parent:span;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	border:none;
+	font-weight:bold;
+	vertical-align:baseline;}
+span.spanpaddedline
+	{mso-style-name:span_paddedline;
+	mso-style-unhide:no;
+	mso-style-parent:span;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	border:none;
+	vertical-align:baseline;}
+p.spanpaddedlineParagraph, li.spanpaddedlineParagraph, div.spanpaddedlineParagraph
+	{mso-style-name:"span_paddedline Paragraph";
+	mso-style-unhide:no;
+	mso-style-parent:"span Paragraph";
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.spanParagraph, li.spanParagraph, div.spanParagraph
+	{mso-style-name:"span Paragraph";
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+span.spancompanyname
+	{mso-style-name:span_companyname;
+	mso-style-unhide:no;
+	mso-style-parent:span;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	border:none;
+	font-weight:bold;
+	vertical-align:baseline;}
+p.ulli, li.ulli, div.ulli
+	{mso-style-name:ul_li;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.hiltParaWrapper, li.hiltParaWrapper, div.hiltParaWrapper
+	{mso-style-name:hiltParaWrapper;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+p.documentsectionnotmulti-para-hiltnotmulti-section-hiltmulti-para-opt, li.documentsectionnotmulti-para-hiltnotmulti-section-hiltmulti-para-opt, div.documentsectionnotmulti-para-hiltnotmulti-section-hiltmulti-para-opt
+	{mso-style-name:"document_section_not\(\.multi-para-hilt\)_not\(\.multi-section-hilt\)_multi-para-opt";
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	display:none;
+	mso-hide:all;}
+p.documenttxtBold, li.documenttxtBold, div.documenttxtBold
+	{mso-style-name:document_txtBold;
+	mso-style-unhide:no;
+	margin:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+span.Strong1
+	{mso-style-name:Strong1;
+	mso-style-unhide:no;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	border:none;
+	vertical-align:baseline;}
+span.spandegree
+	{mso-style-name:span_degree;
+	mso-style-unhide:no;
+	mso-style-parent:span;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	border:none;
+	font-weight:bold;
+	vertical-align:baseline;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:12.0pt 30.0pt 12.0pt 30.0pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1 -1316316926 1949499316 1531314868 514984254 -323956782 1087957004 -1805073632 1483605276 1372985704;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l1
+	{mso-list-id:2;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2 -363571006 -1647952164 -207861898 -558315312 1751939256 -1613339018 475818402 -429197824 351934758;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l2
+	{mso-list-id:3;
+	mso-list-type:hybrid;
+	mso-list-template-ids:3 -1809526570 1526518428 671776418 -1725512136 -323337186 -1037263220 -916309902 -856408838 -1103085252;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l3
+	{mso-list-id:4;
+	mso-list-type:hybrid;
+	mso-list-template-ids:4 -39038032 288642486 -1029925178 -1227970794 -1453451648 -1446759708 -678889970 167002404 -2138152466;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l4
+	{mso-list-id:5;
+	mso-list-type:hybrid;
+	mso-list-template-ids:5 390638436 -1141180776 -737083540 1532146090 1149267120 -167239572 1139708606 596441938 1109179196;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l5
+	{mso-list-id:6;
+	mso-list-type:hybrid;
+	mso-list-template-ids:6 -1245942602 626431806 -1829726414 82359108 -1293357608 221565234 576100850 1797424512 -223344656;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l6
+	{mso-list-id:7;
+	mso-list-type:hybrid;
+	mso-list-template-ids:7 -768152116 1224354856 2078411922 -1976500654 536933728 740071266 27312700 -59227796 984519176;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l7
+	{mso-list-id:8;
+	mso-list-type:hybrid;
+	mso-list-template-ids:8 1791162154 -1471116282 1467491956 -2011114398 1809897488 -1594833908 -1289331104 640176758 -752180878;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l7:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l7:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l7:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l7:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l7:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l7:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l7:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l7:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l8
+	{mso-list-id:9;
+	mso-list-type:hybrid;
+	mso-list-template-ids:9 966398828 1846203860 -1498399726 32407412 112872678 -2083205670 -839362116 -723114366 -709716264;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l8:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l8:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l8:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l8:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l8:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+@list l8:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Symbol;
+	mso-hansi-font-family:Symbol;}
+@list l8:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";}
+@list l8:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Wingdings;
+	mso-hansi-font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+table.divdocumenttable
+	{mso-style-name:div_document_table;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US style='tab-interval:.5in;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:none windowtext 1.0pt;
+mso-border-bottom-alt:none windowtext 0in;padding:0in 0in 12.0pt 0in;
+margin-left:1.0in;margin-right:1.0in'>
+
+<p class=divdocumentdivname align=center style='margin-top:12.0pt;text-align:
+center;line-height:40.0pt;border:none;mso-border-bottom-alt:none windowtext 0in;
+padding:0in;mso-padding-alt:0in 0in 12.0pt 0in'><span class=span><b><span
+style='font-size:24.0pt;font-family:"Cinzel ExtraBold";mso-fareast-font-family:
+"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype";font-variant:small-caps'>DON
+FRUMAN</span></b></span><b><span style='font-size:24.0pt;font-family:"Cinzel ExtraBold";
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype";
+font-variant:small-caps'><o:p></o:p></span></b></p>
+
+</div>
+
+<div style='mso-element:para-border-div;border-top:solid black 1.0pt;
+border-left:none;border-bottom:solid black 3.0pt;border-right:none;padding:
+0in 0in 0in 0in;margin-left:1.0in;margin-right:1.0in'>
+
+<p class=divdocumentdivlowerborder><span style='font-family:"Palatino Linotype",serif;
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype"'>&nbsp;<o:p></o:p></span></p>
+
+</div>
+
+<p class=div style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;line-height:0pt'><span
+style='font-size:0pt;font-family:"Palatino Linotype",serif;mso-fareast-font-family:
+"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype"'>&nbsp;<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:none windowtext 1.0pt;
+mso-border-bottom-alt:none windowtext 0in;padding:0in 0in 8.0pt 0in;margin-left:
+1.0in;margin-right:1.0in'>
+
+<p class=divaddress style='margin-top:10.0pt;border:none;mso-border-bottom-alt:
+none windowtext 0in;padding:0in;mso-padding-alt:0in 0in 8.0pt 0in'><span
+class=divaddresslinth-child1bulletspan><span style='font-family:"Palatino Linotype",serif;
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype"'> &nbsp;</span></span><span
+class=documentzipsuffix><span style='font-family:"Palatino Linotype",serif;
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype"'>&nbsp;</span></span><span
+class=span><b><span style='font-size:12.0pt;font-family:"Palatino Linotype",serif;
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype"'>Woodstock,&nbsp;GA&nbsp;30189</span></b></span><span
+class=divaddressli><b><span style='font-size:12.0pt;font-family:"Palatino Linotype",serif;
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype"'>
+</span></b></span><span class=span><b><span style='font-size:12.0pt;font-family:
+"Palatino Linotype",serif;mso-fareast-font-family:"Palatino Linotype";
+mso-bidi-font-family:"Palatino Linotype"'> &nbsp;404&#8209;509&#8209;7866
+ &nbsp;dfruman@gmail.com</span></b></span><span class=divaddressli><b><span
+style='font-size:12.0pt;font-family:"Palatino Linotype",serif;mso-fareast-font-family:
+"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype"'> </span></b></span><b><span
+style='font-size:12.0pt;font-family:"Palatino Linotype",serif;mso-fareast-font-family:
+"Palatino Linotype";mso-bidi-font-family:"Palatino Linotype"'><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></b></p>
+
+</div>
+
+<p class=divdocumentdivsectiontitle style='margin-top:12.0pt;margin-right:1.0in;
+margin-bottom:10.0pt;margin-left:1.0in'><b><u><span style='font-family:"Cinzel ExtraBold";
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"EB Garamond"'>Professional
+Summary<o:p></o:p></span></u></b></p>
+
+<p class=p style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Dynamic
+and experienced technology manager seeking to lead teams in solving complex
+problems and creating positive business solutions. Skilled in adapting to
+evolving workplace demands and technological shifts, with a proven track record
+in leading technology teams to achieve organizational goals.<o:p></o:p></span></p>
+
+<p class=divdocumentdivsectiontitle style='margin-top:12.0pt;margin-right:1.0in;
+margin-bottom:10.0pt;margin-left:1.0in'><b><u><span style='font-family:"Cinzel ExtraBold";
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"EB Garamond"'>Work
+History<o:p></o:p></span></u></b></p>
+
+<p class=divdocumentsinglecolumn style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spanjobtitle><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Implementation Engineering Manager</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>, 07/2022 to Current</span></span><span
+class=spanpaddedline><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'> </span></span><span
+style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=spanpaddedlineParagraph style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spancompanyname><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Urban Science</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>   Detroit, MI</span></span><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l0 level1 lfo1'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Led
+and mentored an international team of implementation engineers in developing
+and executing project plans.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l0 level1 lfo1'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Collaborated
+with business development and marketing teams to understand and exceed client
+needs and expectations.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l0 level1 lfo1'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Hired,
+coached a generalist team of engineers, ensuring individuals were able to take
+ownership of projects and be recognized for their contributions.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l0 level1 lfo1'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Oversaw
+implementation and maintenance of over 160 client-facing systems, while
+maintaining high quality, on time and in budget, deliverables.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l0 level1 lfo1'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Innovate
+and improve business processes based on first-principles decisions for software
+design, development, and deployment, significantly enhancing productivity and
+team collaboration.<o:p></o:p></span></span></p>
+
+<p class=divdocumentsinglecolumn style='margin-top:20.0pt;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spanjobtitle><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Senior Implementation Engineer</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>, 04/2021 to 07/2022</span></span><span
+class=spanpaddedline><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'> </span></span><span
+style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=spanpaddedlineParagraph style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spancompanyname><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Urban Science</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>   Detroit, MI</span></span><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l1 level1 lfo2'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Led
+complex software implementation projects for major international clients,
+ensuring timely delivery of high-quality products.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l1 level1 lfo2'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Streamlined
+processes through automation, reducing manual effort and increasing
+productivity.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l1 level1 lfo2'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Enhanced
+team collaboration through clear communication, fostering a synergistic and
+cohesive work environment.<o:p></o:p></span></span></p>
+
+<p class=divdocumentsinglecolumn style='margin-top:20.0pt;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spanjobtitle><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Intern / Associate Developer /
+Developer</span></span><span class=span><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>,
+05/2016 to 04/2021</span></span><span class=spanpaddedline><span
+style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>
+</span></span><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=spanpaddedlineParagraph style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spancompanyname><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Urban Science</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>   Detroit, MI</span></span><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l2 level1 lfo3'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Named
+ Innovator of the Year  for spearheading the development and implementation of
+a simple, unified, and revolutionary company-wide deployment process, which was
+key to transforming the direction of the company.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l2 level1 lfo3'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Progressed
+through roles with increasing responsibility, working with executive management
+to continuously improve the engineering organization.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l2 level1 lfo3'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Developed
+and maintained critical software applications, contributing to the company's
+technological advancement and efficiency.<o:p></o:p></span></span></p>
+
+<p class=divdocumentsinglecolumn style='margin-top:20.0pt;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spanjobtitle><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Manager, Editor, Owner</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>, 02/2011 to 05/2016</span></span><span
+class=spanpaddedline><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'> </span></span><span
+style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=spanpaddedlineParagraph style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spancompanyname><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Nine Dusks Entertainment, LLC</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>   Atlanta, GA</span></span><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l3 level1 lfo4'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Oversaw
+all aspects of business operations, including management, editing, and content
+development<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l3 level1 lfo4'><![if !supportLists]><span class=span><span
+style='font-size:14.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></span><![endif]><span class=span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Pioneered
+innovative strategies that enhanced the company's market presence and customer
+engagement.<o:p></o:p></span></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span class=span><span
+style='font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=divdocumentdivsectiontitle style='margin-top:12.0pt;margin-right:1.0in;
+margin-bottom:10.0pt;margin-left:1.0in'><b><u><span style='font-family:"Cinzel ExtraBold";
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"EB Garamond"'>Skills<o:p></o:p></span></u></b></p>
+
+<table class=divdocumenttable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-table-layout-alt:fixed;mso-yfti-tbllook:
+ 1504;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+  height:141.9pt'>
+  <td width=545 valign=top style='width:408.65pt;padding:0in 0in 0in 0in;
+  height:141.9pt'>
+  <p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+  margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+  mso-list:l4 level1 lfo5'><![if !supportLists]><span style='font-size:14.0pt;
+  font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:14.0pt;font-family:
+  "EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Proficient in C#,
+  SQL, PowerShell.<o:p></o:p></span></p>
+  <p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+  margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+  mso-list:l4 level1 lfo5'><![if !supportLists]><span style='font-size:14.0pt;
+  font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:14.0pt;font-family:
+  "EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Strong oral and
+  written communication skills.<o:p></o:p></span></p>
+  <p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+  margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+  mso-list:l4 level1 lfo5'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:14.0pt;font-family:
+  "EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Experienced in
+  leading and uniting teams for collaborative project success.</span><span
+  style='font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+  </td>
+  <td width=545 valign=top style='width:408.65pt;border:none;border-left:solid #FEFDFD 1.0pt;
+  padding:0in 0in 0in 0in;height:141.9pt'>
+  <p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+  margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+  mso-list:l5 level1 lfo6'><![if !supportLists]><span style='font-size:14.0pt;
+  font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:14.0pt;font-family:
+  "EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Experienced in
+  navigating complex project plans with multiple teams and prioritizing work
+  against business needs.<o:p></o:p></span></p>
+  <p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+  margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+  mso-list:l5 level1 lfo6'><![if !supportLists]><span style='font-size:14.0pt;
+  font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:14.0pt;font-family:
+  "EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Proficient in
+  project management and software development methodologies.<o:p></o:p></span></p>
+  <p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+  margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+  mso-list:l5 level1 lfo6'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span style='font-size:14.0pt;font-family:
+  "EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Interdisciplinary
+  Collaboration</span><span style='font-family:"EB Garamond";mso-fareast-font-family:
+  "Palatino Linotype"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l6 level1 lfo7;display:none'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;display:none;mso-hide:all'><span style='mso-list:Ignore'> </span></span><![endif]><span
+style='font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype";
+display:none;mso-hide:all'>Proficient in C#, SQL, PowerShell.<o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l6 level1 lfo7;display:none'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;display:none;mso-hide:all'><span style='mso-list:Ignore'> </span></span><![endif]><span
+style='font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype";
+display:none;mso-hide:all'>Strong oral and written communication skills.<o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l6 level1 lfo7;display:none'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;display:none;mso-hide:all'><span style='mso-list:Ignore'> </span></span><![endif]><span
+style='font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype";
+display:none;mso-hide:all'>Experienced in leading and uniting teams for
+collaborative project success.<o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l7 level1 lfo8;display:none'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;display:none;mso-hide:all'><span style='mso-list:Ignore'> </span></span><![endif]><span
+style='font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype";
+display:none;mso-hide:all'>Experienced in navigating complex project plans with
+multiple teams and prioritizing work against business needs.<o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l7 level1 lfo8;display:none'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;display:none;mso-hide:all'><span style='mso-list:Ignore'> </span></span><![endif]><span
+style='font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype";
+display:none;mso-hide:all'>Proficient in project management and software
+development methodologies.<o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l7 level1 lfo8;display:none'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;display:none;mso-hide:all'><span style='mso-list:Ignore'> </span></span><![endif]><span
+style='font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype";
+display:none;mso-hide:all'>Interdisciplinary Collaboration<o:p></o:p></span></p>
+
+<p class=divdocumentdivsectiontitle style='margin-top:12.0pt;margin-right:1.0in;
+margin-bottom:10.0pt;margin-left:1.0in'><b><u><span style='font-family:"Cinzel ExtraBold";
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"EB Garamond"'>Accomplishments<o:p></o:p></span></u></b></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l8 level1 lfo9'><![if !supportLists]><span style='font-size:14.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=Strong1><b><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Innovation
+Award<br>
+</span></b></span><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>For the design and implementation
+of a standardized, reusable deployment process using Azure DevOps at Urban
+Science.<o:p></o:p></span></p>
+
+<p class=ulli style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:0in;line-height:20.0pt;
+mso-list:l8 level1 lfo9'><![if !supportLists]><span style='font-size:14.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=Strong1><b><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>Eagle
+Scout<br>
+</span></b></span><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Recognition for leadership,
+service, and community involvement.<o:p></o:p></span></p>
+
+<p class=divdocumentdivsectiontitle style='margin-top:12.0pt;margin-right:1.0in;
+margin-bottom:10.0pt;margin-left:1.0in'><b><u><span style='font-family:"Cinzel ExtraBold";
+mso-fareast-font-family:"Palatino Linotype";mso-bidi-font-family:"EB Garamond"'>Education<o:p></o:p></span></u></b></p>
+
+<p class=divdocumentsinglecolumn style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spandegree><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Master of Science</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>: Information Systems <span class=GramE>And</span>
+Technology</span></span><span class=singlecolumnspanpaddedlinenth-child1><span
+style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'>
+</span></span><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=spanpaddedlineParagraph style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spancompanyname><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>University of Michigan</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'> - Dearborn, MI</span></span><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=divdocumentsinglecolumn style='margin-top:20.0pt;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spandegree><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Master of Arts</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>: Professional Writing</span></span><span
+class=singlecolumnspanpaddedlinenth-child1><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'> </span></span><span
+style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=spanpaddedlineParagraph style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spancompanyname><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Kennesaw State University</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'> - Kennesaw, GA</span></span><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=divdocumentsinglecolumn style='margin-top:20.0pt;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spandegree><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Bachelor of Arts</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'>: Philosophy</span></span><span
+class=singlecolumnspanpaddedlinenth-child1><span style='font-size:14.0pt;
+font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'> </span></span><span
+style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+<p class=spanpaddedlineParagraph style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;line-height:20.0pt'><span
+class=spancompanyname><span style='font-size:14.0pt;font-family:"EB Garamond";
+mso-fareast-font-family:"Palatino Linotype"'>Furman University</span></span><span
+class=span><span style='font-size:14.0pt;font-family:"EB Garamond";mso-fareast-font-family:
+"Palatino Linotype"'> - Greenville, SC</span></span><span style='font-size:
+14.0pt;font-family:"EB Garamond";mso-fareast-font-family:"Palatino Linotype"'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
+
+    </div>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        document.getElementById('rollButton').addEventListener('click', function() {
+            const dice = document.getElementById('dice');
+            const resultText = document.getElementById('resultText');
+            
+            // Simulate rolling a D20 for perception
+            const rollDice = () => Math.floor(Math.random() * 20) + 1;
+
+            // Show dice rolling animation (simulated here with random numbers)
+            let rollCount = 0;
+            const maxRolls = 20;
+            const interval = setInterval(() => {
+                rollCount++;
+                const result = rollDice();
+                dice.textContent = `🎲 ${result}`;
+                if (rollCount >= maxRolls) {
+                    clearInterval(interval);
+                    finishDiceRoll(result);
+                }
+            }, 100);
+        });
+
+        function finishDiceRoll(result) {
+            const resultText = document.getElementById('resultText');
+            
+            if (result >= 8) {
+                resultText.textContent = "Success! You sense hidden knowledge within the parchment.";
+            } else {
+                resultText.textContent = "Your perception falls short... but the parchment reveals itself regardless.";
+            }
+            
+            setTimeout(() => {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('documentContent').style.display = 'block';
+            }, 2000); // Wait 2 seconds for dramatic effect
+        }
+    </script>
+</body>
+</html>
